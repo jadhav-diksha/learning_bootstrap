@@ -1,0 +1,46 @@
+/* Card Styling */
+.custom-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover lift effect */
+.custom-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Image style */
+.custom-card img {
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom-in effect on hover */
+.custom-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Card body */
+.card-body {
+  padding: 18px;
+  background: #fafafa;
+}
+
+/* Title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Text */
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
