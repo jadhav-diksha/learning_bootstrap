@@ -44,3 +44,11 @@
   font-size: 0.95rem;
   color: #555;
 }
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px); /* lift up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* stronger shadow */
+  }
