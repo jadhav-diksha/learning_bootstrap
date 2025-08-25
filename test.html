@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video & Image Sliding Show</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .carousel-item video,
+    .carousel-item iframe,
+    .carousel-item img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .overlay-text h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .btn-watch {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      background: linear-gradient(to right, #3b82f6, #a855f7);
+      border: none;
+      color: white;
+      width: 190px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+
+    <!-- Slide 1: MP4 Video -->
+    <div class="carousel-item active">
+      <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/3sjKDdf1mE0?autoplay=1&mute=1&loop=1&playlist=3sjKDdf1mE0" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+      <div class="overlay-text">
+        <h6 class="text-info">New Release</h6>
+        <h1>Tarak Mehta ka oolta chashma</h1>
+        <p>Chhoti Nok-Jhok, Bade Pange! Beloved celebrity couples take on challenges.</p>
+        <p><b>2025</b> • U/A 13+ • Hindi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+
+    <!-- Slide 2: YouTube Video -->
+    <div class="carousel-item">
+    <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/5erdyFES00s?autoplay=1&mute=1&loop=1&playlist=5erdyFES00s" 
+  title="YouTube video player" 
+  frameborder="0" mute=1
+  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+
+
+
+      <div class="overlay-text">
+        <h6 class="text-info">TV Show</h6>
+        <h1>Big Boss</h1>
+        <p>Off-screen masti and fun moments with celebrities.</p>
+        <p><b>2025</b> • Reality • Marathi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+
+    <!-- Slide 3: Image -->
+     <div class="carousel-item">
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/3sjKDdf1mE0?autoplay=1&mute=1&loop=1&playlist=3sjKDdf1mE0" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+      <div class="overlay-text">
+        <h6 class="text-info">TV Show</h6>
+        <h1>Tarak Mehta</h1>
+        <p>Off-screen masti and fun moments with celebrities.</p>
+        <p><b>2025</b> • Reality • Marathi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

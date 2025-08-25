@@ -1,0 +1,52 @@
+.blog-post-detail .blog-thumb {
+    position: relative;
+    padding: 0;
+    margin-bottom: 30px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+ /* Image hover effect */
+.post-img img {
+      width: 100%;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+    .post-img img:hover {
+      transform: scale(1.05);
+    }
+    .post-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+     /* Search box styling */
+    .search-box input {
+      border-radius: 25px;
+      padding-left: 15px;
+    }
+    .search-box button {
+      border-radius: 50%;
+      margin-left: -45px;
+      z-index: 10;
+    }
+
+    .social-icon {
+    font-size: 30px;
+    color: #555;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+  }
+
+  .social-icon:hover {
+    color: #e74c3c; /* Default hover color */
+    transform: scale(1.2);
+  }
+
+  /* Custom hover colors per icon */
+  .bi-youtube:hover { color: #FF0000; }
+  .bi-twitter:hover { color:rgb(144, 165, 42); }
+  .bi-google:hover { color: skyblue; }
+  .bi-instagram:hover { color: #E1306C; }
