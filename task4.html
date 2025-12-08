@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design - Task</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #333;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+    }
+
+    .navbar a:hover {
+      background: #575757;
+    }
+
+    /* Hamburger icon */
+    .navbar .icon {
+      display: none;
+      float: right;
+      font-size: 22px;
+      padding: 14px 20px;
+      cursor: pointer;
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1;
+      padding: 20px;
+      background: #f2f2f2;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    /* Responsive Design using Media Queries */
+    @media (max-width: 768px) {
+      .grid {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar a {display: none;}
+      .navbar a.active {display: block;}
+      .navbar .icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar" id="myNavbar">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <span class="icon" onclick="toggleMenu()">☰</span>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Responsive Design Example</h1>
+    <p>हे एक साधं responsive webpage आहे. मोबाईल, टॅबलेट आणि डेस्कटॉपवर नीट दिसतं.</p>
+
+    <div class="grid">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      let navbar = document.getElementById("myNavbar");
+      let links = navbar.getElementsByTagName("a");
+      for (let i = 1; i < links.length; i++) {
+        if (links[i].style.display === "block") {
+          links[i].style.display = "none";
+        } else {
+          links[i].style.display = "block";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Manipulation - Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    /* -------- Image Gallery -------- */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 100px;
+      height: 70px;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      border-color: #333;
+    }
+
+    #mainImage {
+      margin-top: 20px;
+      max-width: 500px;
+      width: 100%;
+      border: 3px solid #444;
+      border-radius: 8px;
+    }
+
+    /* -------- Image Slideshow -------- */
+    .slideshow-container {
+      position: relative;
+      max-width: 500px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 2px solid #333;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Animation */
+    .fade {
+      animation: fadeEffect 2s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Image Manipulation Example</h1>
+
+  <!-- Part 1: Image Gallery -->
+  <h2>1) Image Gallery with Thumbnails</h2>
+  <div class="gallery">
+    <img src="images/a1.jpg" onclick="showImage(this)">
+    <img src="images/a2.jpeg" onclick="showImage(this)">
+    <img src="images/a3.jpg" onclick="showImage(this)">
+    <img src="images/a4.jpg" onclick="showImage(this)">
+  </div>
+  <img id="mainImage" src="https://via.placeholder.com/500x300/ff7f7f" alt="Main">
+
+  <!-- Part 2: Slideshow -->
+  <h2>2) Simple Image Slideshow</h2>
+  <div class="slideshow-container">
+    <img class="slide fade" src="images/art1.jpeg">
+    <img class="slide fade" src="images/art2.jpeg">
+    <img class="slide fade" src="images/art3.jpeg">
+    <img class="slide fade" src="images/art4.jpeg">
+  </div>
+
+  <script>
+    /* -------- Gallery Script -------- */
+    function showImage(img) {
+      let mainImg = document.getElementById("mainImage");
+      mainImg.src = img.src;
+    }
+
+    /* -------- Slideshow Script -------- */
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // 3 सेकंदांनी image बदलते
+    }
+  </script>
+
+</body>
+</html>

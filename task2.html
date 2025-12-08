@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Task - Level 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #colorBtn {
+      background: #2196F3;
+      color: white;
+    }
+    #addBtn {
+      background: #4CAF50;
+      color: white;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 100px;
+      text-align: center;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Task - Level 1</h1>
+
+  <h2>1) रंग बदलणारे बटन</h2>
+  <button id="colorBtn" onclick="changeColor()">Click Me!</button>
+
+  <!-- Task 2: Greeting Alert -->
+  <h2>2) Greeting संदेश (Alert Box)</h2>
+  <p>पेज लोड झाल्यावर Alert Box आपोआप दिसेल.</p>
+
+  <!-- Task 3: Calculator -->
+  <h2>3) बेरीज करणारा कॅल्क्युलेटर</h2>
+  <input type="number" id="num1" placeholder="पहिली संख्या">
+  <input type="number" id="num2" placeholder="दुसरी संख्या">
+  <br>
+  <button id="addBtn" onclick="addNumbers()">Add</button>
+  <div id="result"></div>
+
+  <script>
+    // Task 1: रंग बदलणारे बटन
+    function changeColor() {
+      let btn = document.getElementById("colorBtn");
+      btn.style.background = btn.style.background === "orange" ? "#2196F3" : "orange";
+    }
+
+    // Task 2: वेळेनुसार Greeting Message
+    window.onload = function() {
+      let now = new Date();
+      let hour = now.getHours();
+      let message = "";
+
+      if (hour < 12) {
+        message = "Good Morning! शुभ प्रभात 🌞";
+      } else if (hour < 18) {
+        message = "Good Afternoon! शुभ दुपार ☀️";
+      } else {
+        message = "Good Evening! शुभ संध्या 🌙";
+      }
+
+      alert(message);
+    }
+
+    // Task 3: Calculator (बेरीज)
+    function addNumbers() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let sum = n1 + n2;
+      document.getElementById("result").innerText = "बेरीज: " + sum;
+    }
+  </script>
+</body>
+</html>
